@@ -9,10 +9,10 @@ n = float(input("введите число : "))
 s = 0
 n = str(n)
 for i in n:
-	try:
-		s += int(i) 
-	except ValueError:
-		continue
+    try:
+	s += int(i) 
+    except ValueError:
+	continue
 		
 print(s)
 	
