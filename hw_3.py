@@ -5,10 +5,12 @@ import random, math
 
 lst = []
 sum = 0
+#создание списка
 for i in range(random.randint(5, 10)):
     a = random.randint(1, 25)
     lst.append(a)
 print(lst)
+
 for i in lst:
     if i % 2 != 0:
         sum += i
@@ -24,12 +26,14 @@ for i in range(math.ceil(len(lst)/2)):
 значением дробной части элементов. - [1.1, 1.2, 3.1, 5, 10.01] => 0.19 '''
 
 lst = []
+
 for i in range(random.randint(5, 10)):
     a = random.uniform(1, 25)
     lst.append(a)
 print(f'\n{lst}')
 mx = lst[0] - int(lst[0])
 mn = lst[0] - int(lst[0])
+
 for i in range(1, len(lst)):
     ost = lst[i] - int(lst[i])
     if ost < mn:
@@ -41,7 +45,14 @@ print(mx - mn)
 '''Нaпишите программу, которая будет преобразовывать десятичное число в двоичное.'''
 
 a = int(input('Введите число в десятичной системе измерения: '))
-print(bin(a)[2:])
+binary = ''
+
+while a > 0:
+    x = a%2
+    binary += str(x)
+    a //= 2
+    
+print(f'Число в двоичной системе : {binary[::-1]}')
 
 '''Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.'''
 
@@ -58,6 +69,7 @@ def F(n):
         return F(n-1) + F(n-2)
     else:
         return F(n + 2) - F(n + 1)
+    
 lst = []
 n = int(input('Введите число для списка чисел Фибоначчи : '))
 for i in range(-n,n+1):
