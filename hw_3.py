@@ -31,6 +31,7 @@ for i in range(random.randint(5, 10)):
     a = random.uniform(1, 25)
     lst.append(a)
 print(f'\n{lst}')
+
 mx = lst[0] - int(lst[0])
 mn = lst[0] - int(lst[0])
 
