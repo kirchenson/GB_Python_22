@@ -11,7 +11,7 @@ def reading(file):
     print(s)
 
 def change(file):
-    n = int(input('Для изменения планов пиши 2, для добавки к существующим - 1: '))
+    n = int(input('Для изменения планов пиши 1, для добавки к существующим - 11: '))
     for i in range(len(days)):
         print(f'{i+1} - {days[i]}')
     day = int(input('введите номер дня недели для изменения: '))
@@ -19,10 +19,10 @@ def change(file):
         lines = f.readlines()
         x = input('введите данные: ')
     with open(file, 'w', encoding='utf-8') as f:
-        if n == 2:
+        if n == 1:
             lines[day - 1] = f'{days[day-1]}  {x}\n'
             f.writelines(lines)
-        elif n == 1:
+        elif n == 11:
             lines[day-1] = f'{lines[day-1][:-2]}, {x}\n'
             f.writelines(lines)
 
