@@ -1,9 +1,8 @@
 days = ['понедельник','вторник','среда','четверг','пятница','суббота','воскресенье']
 def init(file,days):
     f = open(file,'w',encoding='utf-8')
-    f.write(days[0])
-    for i in range(1,len(days)):
-        f.write(f'\n{days[i]}')
+    for i in range(len(days)):
+        f.write(f'{days[i]}\n')
     f.close()
 
 def reading(file):
